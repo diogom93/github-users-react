@@ -1,3 +1,7 @@
+# GitHub Users app
+
+This small project was created as an introduction to React. It consists of a small app that fetches user data from the GitHub API and displays it on the screen.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
