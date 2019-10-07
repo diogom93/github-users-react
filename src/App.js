@@ -7,13 +7,18 @@ function App() {
 	const [cards, setCards] = useState([]);
 
 	const addNewCard = (cardInfo) => {
-		setCards(cards.concat(cardInfo));
+		setCards([...cards, cardInfo]);
+	}
+
+	const removeCard = (card) => {
+		cards.splice(card, 1);
+		setCards([...cards]);
 	}
 
 	return (
 		<div>
 			<Form onSubmit={addNewCard} />
-			<CardList cards={cards} />
+			<CardList cards={cards} onDelete={removeCard} />
 		</div>
 	);
 }

@@ -20,7 +20,7 @@ const Form = (props) => {
                 value={username}
                 onChange={event => setUsername(event.target.value)}
                 placeholder="GitHub username"
-                required/>
+                required />
             <button type="submit">Add card</button>
         </form>
     );

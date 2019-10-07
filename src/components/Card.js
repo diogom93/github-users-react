@@ -1,14 +1,21 @@
 import React from 'react';
 
 const Card = (props) => {
+    const handleRemove = () => {
+        props.onDelete(props.cardNumber);
+    }
+
     return (
-        <a href={props.html_url} style={{margin: '1em'}}>
+        <div style={{margin: '1em'}}>
             <img alt="avatar" style={{ width: '70px' }} src={props.avatar_url} />
             <div>
                 <div style={{ fontWeight: 'bold' }}>{props.name}</div>
-                <div>{props.blog}</div>
+                <a href={props.html_url}>Profile</a>
+                <br/>
+                <a href={props.blog}>{props.blog}</a>
             </div>
-        </a>
+            <button type="button" onClick={handleRemove}>Remove card</button>
+        </div>
     );
 }
 
