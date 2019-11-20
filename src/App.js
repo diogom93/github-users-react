@@ -6,6 +6,17 @@ import './App.css';
 function App() {
 	const [cards, setCards] = useState([]);
 
+	const selectSearchCard = (cardIndex) => {
+		const card = cards[cardIndex];
+		card.search = false;
+		setCards(cards.filter(card => !card.search));
+	}
+
+	const addHoverCard = (cardInfo) => {
+		cardInfo.search = true;
+		setCards([...cards, cardInfo]);
+	}
+
 	const addNewCard = (cardInfo) => {
 		setCards([...cards, cardInfo]);
 	}
@@ -17,8 +28,8 @@ function App() {
 
 	return (
 		<div>
-			<Form onSubmit={addNewCard} />
-			<CardList cards={cards} onDelete={removeCard} />
+			<Form onSubmit={addNewCard} onSearch={addHoverCard} />
+			<CardList cards={cards} onDelete={removeCard} selectUser={selectSearchCard} />
 		</div>
 	);
 }

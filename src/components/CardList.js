@@ -8,7 +8,8 @@ const CardList = (props) => {
                 <Card {...card}
                     key={index}
                     cardNumber={index}
-                    onDelete={props.onDelete} />
+                    onDelete={props.onDelete}
+                    selectUser={props.selectUser} />
             ))}
         </div>
     );

@@ -5,8 +5,14 @@ const Card = (props) => {
         props.onDelete(props.cardNumber);
     }
 
+    const handleClick = () => {
+        if (props.search) {
+            props.selectUser(props.cardNumber);
+        }
+    }
+
     return (
-        <div style={{margin: '1em'}}>
+        <div onClick={handleClick} style={props.search ? {margin: '1em', opacity: 0.5} : {margin: '1em', opacity: 1}}>
             <img alt="avatar" style={{ width: '70px' }} src={props.avatar_url} />
             <div>
                 <div style={{ fontWeight: 'bold' }}>{props.name}</div>
@@ -14,7 +20,7 @@ const Card = (props) => {
                 <br/>
                 <a href={props.blog}>{props.blog}</a>
             </div>
-            <button type="button" onClick={handleRemove}>Remove card</button>
+            <button style={props.search ? {display: 'none'} : {}} type="button" onClick={handleRemove}>Remove card</button>
         </div>
     );
 }
