@@ -19,7 +19,7 @@ const Form = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        searchUser(event.target.value).then(response => {
+        searchUser(username).then(response => {
             props.onSubmit(response.data);
             setUsername('');
         });

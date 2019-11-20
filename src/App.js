@@ -18,7 +18,7 @@ function App() {
 	}
 
 	const addNewCard = (cardInfo) => {
-		setCards([...cards, cardInfo]);
+		setCards([...cards.filter(card => !card.search), cardInfo]);
 	}
 
 	const removeCard = (card) => {
